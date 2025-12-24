@@ -1,0 +1,46 @@
+.WorkSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px;
+}
+
+.WorkSection-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 30px;
+    color: #880000;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+.Work-section-step {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+.Work-section-step h2 {
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    word-spacing: 1rem;
+
+}
+
+.Work-section-step p {
+    font-size: 20px;
+    color: rgb(61, 49, 49);
+    word-spacing: 1rem;
+}
+
+.Work-step-lists {
+    color: #3d3131;
+    font-size: 20px;
+    line-height: 1.9em;
+    word-spacing: 1rem;
+    list-style: inside;
+    padding-left: 20px;
+}

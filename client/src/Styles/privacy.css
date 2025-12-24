@@ -1,0 +1,77 @@
+.privacy-section {
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.privacy-section p {
+    font-size: 20px;
+    color: rgb(61, 49, 49);
+    word-spacing: 1rem;
+    line-height: 2.3rem;
+}
+
+.privacy-section h2 {
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    word-spacing: 1rem;
+}
+
+.Privacy-disp {
+    width: 1000px;
+}
+
+.privacy-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 30px;
+    color: #880000;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+.privacy-heading {
+    width: 1000px;
+    word-spacing: 1rem;
+    font-size: 20px;
+}
+
+
+.privacy-list {
+    padding-top: 50px;
+    font-size: 20px;
+    word-spacing: 1rem;
+}
+
+.privacy-list li {
+    color: rgb(37, 33, 33);
+    font-size: 22px;
+    gap: 30px;
+    margin-top: 20px;
+    list-style: upper-roman;
+}
+
+.privacy-list li p {
+    gap: 20px;
+}
+
+.Pr-info-list {
+    font-size: 20px;
+    word-spacing: 1rem;
+    padding-left: 25px;
+    align-items: center;
+}
+
+.Pr-info-list li{
+    list-style: lower-alpha;
+    font-size: 22px;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.Pr-info-list li p {
+    gap: 20px;
+}

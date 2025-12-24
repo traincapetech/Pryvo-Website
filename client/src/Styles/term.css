@@ -1,0 +1,56 @@
+.Term-section {
+    padding: 100px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.Term-title{
+    font-size: 50px;
+    color: #880000;
+}
+
+.Term-title-heading {
+    justify-content: center;
+    width: 1000px;
+}
+
+.Term-title-head-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 20px;
+    font-weight: 300;
+    color: black;
+
+}
+
+.Term-title-head-list-font {
+    font: 25px;
+}
+
+
+.term-list {
+    padding-top: 50px;
+    font-size: 20px;
+    word-spacing: 1rem;
+}
+
+.term-list li{
+    color: rgb(37, 33, 33);
+    font-size: 22px;
+    font-weight: 600;
+    gap: 30px;
+    margin-top: 20px;
+    list-style:lower-roman;
+}
+
+.term-list li p{
+    gap: 20px;
+}
+
+
+.Term-title-head-list-font-date{
+    font-style: italic;
+}
