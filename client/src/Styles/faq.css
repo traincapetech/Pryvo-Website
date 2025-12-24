@@ -1,0 +1,79 @@
+.faq_navbar {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #e7d0d0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: #880000;
+    align-items: center;
+}
+
+.faq-help {
+    font-size: 22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.faq-section-list {
+    max-width: 1300px;
+    height: 100%;
+    margin: 80px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.left-faq-section {
+    width: 1400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.right-faq-section {
+    width: 1400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.left-faq-section-first {
+    padding: 20px;
+}
+
+.right-faq-section-first {
+    padding: 20px;
+}
+
+.left-faq-section-first h2,
+.right-faq-section-first h2 {
+    padding: 40px;
+    text-align: center;
+    border: 1px solid red;
+    background-color: #ffc8c8;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.left-faq-section-first p,
+.right-faq-section-first p {
+    padding: 40px;
+    text-align: center;
+    align-items: center;
+    border: 1px solid #eca6a6;
+    background-color: #f5e1e1;
+    border-radius: 20px;
+    font-size: 20px;
+    line-height: 1.5;
+}

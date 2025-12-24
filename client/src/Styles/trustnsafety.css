@@ -1,0 +1,51 @@
+.trust-section {
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.trust-title {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 1400px;
+}
+
+.trust-title h1 {
+    font-size: 35px;
+}
+
+.trust-list{
+    font-size: 20px;
+    list-style:disc;
+    padding-left: 20px;
+}
+
+.trust-title p {
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 600;
+    color: rgb(109, 108, 108);
+
+}
+
+.trust-descr {
+    width: 1000px;
+    word-spacing: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.trust-descr h3 {
+    font-size: 20px;
+}
+
+.trust-descr p, .last-trust-descr{
+    font-size: 20px;
+}
+

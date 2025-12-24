@@ -1,0 +1,157 @@
+.contact_navbar {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #e4d9d9;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: #880000;
+    align-items: center;
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
+    text-align: center;
+    gap: 30px;
+    height: 100vh;
+}
+
+.contact-section h1 {
+    font-size: 35px;
+    font-style: bold;
+}
+
+.contact-section p {
+    font-size: 20px;
+    color: black;
+}
+
+.Select-list {
+    background-color: #e2cbcb;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 600px;   
+}
+
+.Select-list option {
+    background-color: #ead3d3;
+    /* default bg */
+    color: #000;
+}
+
+/* 👇 Hover effect */
+.Select-list option:hover {
+    background-color: #b30000;
+    color: #fff;
+}
+
+/* 👇 Selected option */
+.Select-list option:checked {
+    background-color: #8b0000;
+    color: #fff;
+}
+
+
+.text-input {
+    height: 40px;
+    width: 600px;
+    border: 1px solid #880000;
+    border-radius: 5px;
+    font-size: 20px;
+    align-items: center;
+    background-color: #fffbfb;
+    padding-left: 10px;
+}
+
+.form-section {
+    align-items: end;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+padding-right: 130px;
+}
+
+.form-section-list {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.Contact-form {
+    align-items: center;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.Contact-form h2 {
+    font-size: 20px;
+}
+
+.request-textarea {
+    width: 600px;
+    height: 300px;
+    font-size: 20px;
+    padding-bottom: 50px;
+}
+
+.contact-form-submit {
+    background-color: #880000;
+    border-radius: 20px;
+    min-width: 190px;
+    line-height: 2.72;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 0 20px;
+    color: azure;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.contact-form-submit:hover {
+    background-color: #fd1f18;
+}
+
+#form-attachments {
+    width: 300px;
+    padding: 20px;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #880000;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.file-label {
+    background-color: #880000;
+    /* Pryvo yellow */
+    color: azure;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.file-label:hover {
+    background-color: #b10505;
+}
+
+.file-name {
+    color: #444;
+    font-size: 14px;
+}

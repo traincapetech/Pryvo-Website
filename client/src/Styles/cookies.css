@@ -1,0 +1,59 @@
+.cookies-section {
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+
+.cookies-title {
+    color: #880000;
+    padding-bottom: 30px;
+    font-size: 30px;
+}
+
+
+.cookies-descr {
+    font-weight: 500;
+    width: 1000px;
+    font-size: 20px;
+    word-spacing: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cookies-descr h3 {
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    word-spacing: 1rem;
+}
+
+.cookies-descr p {
+    font-size: 20px;
+    color: #3d3131;
+    word-spacing: 1rem;
+}
+
+.cookies-list{
+     color: #3d3131;
+    font-size: 20px;
+    line-height: 1.9em;
+    word-spacing: 1rem;
+    list-style: inside;
+    padding-left: 20px;
+}
+
+.Note-only {
+    border-left: 10px solid gray;
+    padding-left: 30px;
+}
+
+.Note {
+    font-weight: 600;
+}
+
+.italic-only {
+    font-style: italic;
+}
