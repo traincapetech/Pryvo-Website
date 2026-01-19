@@ -1,14 +1,10 @@
 import React from 'react'
-import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
-import '../Styles/Home.css'
 import '../Styles/privacy.css'
 import { FcPrivacy } from "react-icons/fc";
 
 const Privacy = () => {
   return (
     <div className='font-PTserif'>
-      <Navbar />
       <div className="privacy-section">
         <div className="privacy-title">
           <FcPrivacy />
@@ -21,7 +17,6 @@ const Privacy = () => {
           <br />
           <hr />
         </div>
-
 
         <div className="Privacy-disp">
           <ul className='privacy-list'>
@@ -155,7 +150,6 @@ const Privacy = () => {
           </ul>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }

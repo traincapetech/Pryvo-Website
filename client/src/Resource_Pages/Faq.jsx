@@ -13,18 +13,6 @@ const Faq = () => {
 
     return (
         <div className="faq-body">
-            <div className="faq_navbar">
-                <div className="logo">
-                    <Link to="/">
-                        <span>𝑷𝒓𝒚𝒗𝒐</span>
-                    </Link>
-                </div>
-
-                <div className="faq-help">
-                    <Link to="/faq">Help Centre</Link>
-                </div>
-            </div>
-
             <div className="faq-section-list">
                 <div className="left-faq-section">
                     <div className="left-faq-section-first">

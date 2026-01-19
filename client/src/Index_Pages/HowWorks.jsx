@@ -1,14 +1,10 @@
 import React from 'react'
 import '../Styles/howItWorks.css'
-import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
 import { FcSearch } from "react-icons/fc";
-import { FcAdvance } from "react-icons/fc";
 
 const HowWorks = () => {
     return (
-        <div className='font-PTserif'>
-            <Navbar />
+        <div className='page-offset'>
             <div className="WorkSection">
                 <div className="WorkSection-title">
                     <FcSearch />
@@ -168,7 +164,6 @@ const HowWorks = () => {
                     </ul>
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }

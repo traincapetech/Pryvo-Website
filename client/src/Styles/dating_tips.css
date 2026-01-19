@@ -1,51 +1,117 @@
+/* MAIN SECTION */
 .dating-section {
-    padding: 100px;
+    padding: 120px 16px 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 80px;
+    gap: 60px;
     width: 100%;
-    justify-content: space-evenly;
 }
 
-.dating-title{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    width: 1400px;
+/* TITLE */
+.dating-title {
+    width: 100%;
+    max-width: 1200px;
 }
 
 .dating-title h1 {
-    font-size: 35px;
-}
-
-.dating-list{
-    font-size: 20px;
-    list-style:disc;
-    padding-left: 20px;
+    font-size: 36px;
 }
 
 .dating-title p {
-    font-size: 15px;
+    font-size: 14px;
     font-style: italic;
     font-weight: 600;
     color: rgb(109, 108, 108);
-
 }
 
-.dating-descr{
-    width: 1000px;
-    word-spacing: 1rem;
+.dating-descr {
+    width: 100%;
+    max-width: 900px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 24px;
+    word-spacing: 0.3rem;
 }
 
 .dating-descr h3 {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 600;
 }
 
-.dating-descr p{
-    font-size: 20px;
+.dating-descr p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* LIST */
+.dating-list {
+    font-size: 18px;
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/* NOTE TEXT */
+.Note {
+    font-weight: 600;
+}
+
+/* YOUTUBE VIDEO RESPONSIVE */
+.ytdatingScam {
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+}
+
+.ytdatingScam iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+/* HR */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+/* ======================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ======================= */
+@media (max-width: 768px) {
+    .dating-section {
+        padding: 100px 14px 40px;
+        gap: 40px;
+    }
+
+    .dating-title h1 {
+        font-size: 28px;
+    }
+
+    .dating-descr h3 {
+        font-size: 22px;
+    }
+
+    .dating-descr p,
+    .dating-list {
+        font-size: 16px;
+    }
+}
+
+/* ======================= */
+/* 📱 SMALL MOBILE */
+/* ======================= */
+@media (max-width: 480px) {
+    .dating-title h1 {
+        font-size: 24px;
+    }
+
+    .dating-descr h3 {
+        font-size: 20px;
+    }
+
+    .dating-descr p,
+    .dating-list {
+        font-size: 15px;
+    }
 }

@@ -1,0 +1,42 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.chart-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: cadetblue;
+}
+
+.chart2 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.chart-box2,
+.chart-box3 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(247, 252, 208);
+  width: 50%;
+}

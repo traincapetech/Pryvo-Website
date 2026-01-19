@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { newsletterAPI } from "../api/api";
 import toast from 'react-hot-toast';
 export const useStore = create((set) => ({
-    // Newsletter
+
   subscribing: false,
   subscribers: [],
   subject: "",
@@ -19,11 +19,12 @@ export const useStore = create((set) => ({
       toast.error("Please enter your email address.");
       return;
     }
-    // Basic validation
+   
     if (!/\S+@\S+\.\S+/.test(email)) {
       toast.error("Please enter a valid email address.");
       return;
     }
+    
     set({ subscribing: true });
     try {
       await newsletterAPI.subscribe(email);

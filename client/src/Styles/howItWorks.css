@@ -1,46 +1,96 @@
+/* ================================
+   HOW IT WORKS – MOBILE FIRST CSS
+   ================================ */
+.page-offset {
+    padding-top: 90px; /* navbar height + little space */
+}
+
+/* Page wrapper */
 .WorkSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 100px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Title section */
 .WorkSection-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 30px;
-    color: #880000;
-    gap: 20px;
-    padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: #880000;
+  margin-bottom: 24px;
+  font-size: 35px;
 }
 
+.WorkSection-title h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Each step block */
 .Work-section-step {
-    width: 1000px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-bottom: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
 }
 
+/* Step heading */
 .Work-section-step h2 {
-    color: rgb(0, 0, 0);
-    font-size: 30px;
-    word-spacing: 1rem;
-
+  font-size: 1.2rem;
+  color: #000;
 }
 
+/* Paragraph text */
 .Work-section-step p {
-    font-size: 20px;
-    color: rgb(61, 49, 49);
-    word-spacing: 1rem;
+  font-size: 0.95rem;
+  color: #3d3131;
+  line-height: 1.6;
 }
 
+/* Lists */
 .Work-step-lists {
-    color: #3d3131;
-    font-size: 20px;
-    line-height: 1.9em;
-    word-spacing: 1rem;
-    list-style: inside;
-    padding-left: 20px;
+  padding-left: 20px;
+  list-style: disc;
+  font-size: 0.95rem;
+  color: #3d3131;
+  line-height: 1.8;
+}
+
+/* Highlight note text */
+.Note {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* Divider */
+hr {
+  margin-top: 20px;
+  opacity: 0.3;
+}
+
+/* ================================
+   TABLET & DESKTOP
+   ================================ */
+@media (min-width: 768px) {
+  .WorkSection {
+    padding: 60px;
+  }
+
+  .WorkSection-title h2 {
+    font-size: 2rem;
+  }
+
+  .Work-section-step h2 {
+    font-size: 1.6rem;
+  }
+
+  .Work-section-step p,
+  .Work-step-lists {
+    font-size: 1.1rem;
+  }
 }

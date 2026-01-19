@@ -1,46 +1,105 @@
-.security_section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 100px;
+/* Navbar height variable (IMPORTANT) */
+:root {
+  --navbar-height: 120px;
 }
 
-.Security-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 50px;
-    color: #880000;
-    gap: 20px;
-    padding-bottom: 50px;
+/* Page wrapper */
+.terms-page {
+  padding-top: var(--navbar-height);
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
 }
 
-.security_section1 {
-    display: flex;
-    flex-direction: column;
-    width: 1000px;
-    align-items: center;
-    gap: 80px;
+/* Content container */
+.terms-container {
+  max-width: 900px;
+  padding: 60px 20px;
+  line-height: 1.8;
+  color: #1f1f1f;
 }
 
-.securityImg{
-    border-radius: 10px;
-    height: 400px;
+/* Header */
+.terms-header {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.Security-title-heading {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    font-size: 30px;
-    align-items: center;
+.terms-title {
+  font-size: 48px;
+  color: #880000;
+  margin-bottom: 10px;
 }
 
-.security-list {
-    color: black;
-    font-size: 20px;
-    line-height: 1.9em;
-    word-spacing: 1rem;
-    list-style: outside;
-    padding-left: 20px;
+.terms-subtitle {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.terms-date {
+  font-style: italic;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Intro */
+.terms-intro {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+/* Terms list */
+.terms-list {
+  list-style: decimal;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.terms-list h3 {
+  font-size: 20px;
+  color: #880000;
+  margin-bottom: 8px;
+}
+
+.terms-list p {
+  font-size: 17px;
+  color: #333;
+}
+
+/* =======================
+   RESPONSIVE BREAKPOINTS
+======================= */
+
+@media (max-width: 768px) {
+  .terms-title {
+    font-size: 36px;
+  }
+
+  .terms-container {
+    padding: 40px 16px;
+  }
+
+  .terms-list h3 {
+    font-size: 18px;
+  }
+
+  .terms-list p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .terms-title {
+    font-size: 28px;
+  }
+
+  .terms-intro {
+    font-size: 16px;
+  }
+
+  .terms-list p {
+    font-size: 15px;
+  }
 }
