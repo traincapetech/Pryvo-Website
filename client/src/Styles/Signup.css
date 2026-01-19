@@ -1,0 +1,129 @@
+/* ============================= */
+/* Admin Signup Page CSS */
+/* ============================= */
+
+.signup-container {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #2b0f14, #4b141c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-box {
+    width: 850px;
+    background: #fff;
+    display: flex;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Left Image */
+.signup-box img {
+    width: 50%;
+    object-fit: cover;
+}
+
+/* Right Form */
+.signup-form {
+    width: 50%;
+    padding: 45px 40px;
+}
+
+.signup-form .logo {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.signup-form .logo span {
+    font-size: 28px;
+    font-weight: 700;
+    color: maroon;
+}
+
+.signup-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2b0f14;
+    letter-spacing: 1px;
+}
+
+/* Inputs */
+.signup-input-box {
+    margin-bottom: 16px;
+}
+
+.signup-input-box label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+.signup-input-field {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+.signup-input-field:focus {
+    border-color: maroon;
+    box-shadow: 0 0 0 2px rgba(128, 0, 0, 0.15);
+}
+
+/* Button */
+.signup-btn {
+    width: 100%;
+    padding: 13px;
+    background: maroon;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.signup-btn:hover {
+    background: #5e0f18;
+}
+
+/* Redirect text */
+.signup-redirect-text {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.redirect-text a {
+    color: maroon;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.redirect-text a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .signup-box {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .signup-box img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .signup-form {
+        width: 100%;
+        padding: 30px 25px;
+    }
+}

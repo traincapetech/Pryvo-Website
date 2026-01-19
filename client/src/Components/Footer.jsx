@@ -1,11 +1,15 @@
 import React from 'react'
-import './footer.css'
+import "../Styles/footer.css"
 import { FaRegCopyright } from "react-icons/fa6"
 import { Link } from 'react-router'
+import { motion } from "motion/react"
 
 const Footer = () => {
     return (
-        <div>
+        <motion.div initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}>
             <div className="footer">
                 <div className="left-side-footer">
                     <div className="logo">
@@ -46,7 +50,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

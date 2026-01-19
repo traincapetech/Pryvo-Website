@@ -1,13 +1,9 @@
 import React from 'react'
-import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
-import '../Styles/Home.css'
 import '../Styles/cookies.css'
 
 const Cookies = () => {
   return (
     <div className='font-PTserif'>
-      <Navbar />
       <div className="cookies-section">
         <div className="cookies-title">
           <h1>
@@ -251,19 +247,18 @@ const Cookies = () => {
           <p>
             <span className='Note'>Online:</span> Contact us through our website or app support section
           </p>
-          <br /><br /><hr />
+          <br /><hr />
         </div>
 
         <div className="cookies-descr">
           <p className='italic-only'>
             This Cookie Policy may be updated from time to time. We encourage you to review it periodically to stay informed about how Pryvo uses cookies.
           </p>
-          
+
         </div>
 
 
       </div>
-      <Footer />
     </div>
   )
 }

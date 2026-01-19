@@ -1,13 +1,16 @@
 import axios from "axios";
 
-// Create axios instance with default configuration
 const api = axios.create({
-  baseURL:
-    "http://localhost:8080/api",
-  timeout: 10000, // 10 second timeout
-  headers: {
-    "Content-Type": "application/json",
-  },
+  baseURL: "https://dating-app-backend-19lb.onrender.com/api",
+  timeout: 10000,
+});
+
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem("adminToken");
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
 });
 
 export const newsletterAPI = {
@@ -16,3 +19,22 @@ export const newsletterAPI = {
   getSubscribers: () => api.get("/newsletter"),
   sendNewsletter: (data) => api.post("/newsletter/send", data),
 };
+
+export const Users = {
+  getUsers: () => api.get("/admin/users"),
+  suspendUsers: (userId) => api.post(`/admin/users/${userId}/suspend`),
+  activeUsers: (userId) => api.post(`/admin/users/${userId}/activate`),
+  deleteUser: (userId) => api.delete(`/admin/users/${userId}`)
+}
+
+export const Subscription ={
+  getSubscribers: () => api.get("/admin/subscriptions"),
+}
+
+export const openpopup = {
+  getopenpopup: () => api.get('/admin/users'),
+}
+
+export const adminAnalytics = {
+  getAnalytics: () => api.get('/admin/dashboard/analytics'),
+}

@@ -235,7 +235,6 @@ const Dating_tips = () => {
                     <p>
                         If you need help or want to learn more about staying safe on Pryvo, please contact our support team through the app or website.
                     </p>
-
                     <br />
                 </div>
             </div>

@@ -1,13 +1,10 @@
 import React from 'react'
-import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
 import '../Styles/Home.css'
 import '../Styles/trustnsafety.css'
 
 const TrustNSafety = () => {
     return (
         <div>
-            <Navbar />
             <div className="trust-section">
                 <div className="trust-title">
                     <h1>
@@ -200,7 +197,7 @@ const TrustNSafety = () => {
                     </p>
                     <ul className='trust-list'>
                         <li><span className='Note'>In-app support tools</span></li>
-                        <li><span className='Note'>Email: </span>support@pryvo.com</li>
+                        <li><span className='Note'>Email: </span>pryvo@traincapetech.in</li>
                     </ul>
 
                     <p>
@@ -210,7 +207,6 @@ const TrustNSafety = () => {
                 </div>
                 <p className='last-trust-descr'>At Pryvo, we are committed to building a platform where trust, respect, and safety come first.</p>
             </div>
-            <Footer />
         </div>
     )
 }
