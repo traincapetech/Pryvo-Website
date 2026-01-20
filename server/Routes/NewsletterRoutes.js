@@ -9,4 +9,3 @@ router.get("/", getSubscribers);
 router.post("/unsubscribe", unsubscribe);
 
 
-

@@ -1,4 +1,3 @@
-
 import  NewsletterSchema  from "../Models/Newletter.js";
 import { sendEmail } from "../utils/emailservice.js";
 
@@ -47,7 +46,6 @@ export const sendNewsletter = async (req, res) => {
         });
     }
 
-    // Fetch all subscribers
     const subscribers = await NewsletterSchema.find({});
 
     if (subscribers.length === 0) {
@@ -55,9 +53,6 @@ export const sendNewsletter = async (req, res) => {
         .status(404)
         .json({ success: false, message: "No subscribers found" });
     }
-
-    // Send emails in parallel (for small lists) or queue them (proper way)
-    // For simplicity, we'll use Promise.all but log errors individually
 
     console.log(
       `Starting newsletter blast to ${subscribers.length} subscribers...`
