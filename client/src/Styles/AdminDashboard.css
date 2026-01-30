@@ -1,0 +1,266 @@
+.adminDash-layout {
+   display: flex;
+   min-height: 100vh;
+   width: 100%;
+}
+
+.adminDash-main {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+
+.adminDash-content {
+   display: flex;
+   flex-direction: column;
+   padding: 30px;
+   gap: 24px;
+   width: 100%;
+   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+   min-height: calc(100vh - 60px);
+}
+
+@media (max-width: 1024px) {
+   .adminDash-content {
+      padding: 20px;
+   }
+}
+
+/* --- Hero Admin Stats Cards --- */
+.HeroAdmin {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+   gap: 20px;
+   width: 100%;
+}
+
+.HeroAdminCard {
+   background: white;
+   border-radius: 16px;
+   padding: 24px;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+   border: none;
+   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.HeroAdminCard:hover {
+   transform: translateY(-3px);
+   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.HeroAdminCard h2 {
+   font-size: 14px;
+   font-weight: 500;
+   color: #6b7280;
+   margin-bottom: 8px;
+}
+
+.HeroAdminCard p {
+   font-size: 32px;
+   font-weight: 700;
+   color: #1f2937;
+}
+
+/* Card Color Accents */
+.HeroAdminCard:nth-child(1) {
+   border-left: 4px solid #16a34a;
+}
+
+.HeroAdminCard:nth-child(2) {
+   border-left: 4px solid #2563eb;
+}
+
+.HeroAdminCard:nth-child(3) {
+   border-left: 4px solid #d97706;
+}
+
+.HeroAdminCard:nth-child(4) {
+   border-left: 4px solid #7c3aed;
+}
+
+@media (max-width: 768px) {
+   .HeroAdminCard {
+      width: 100%;
+   }
+}
+
+/* --- Chart Section --- */
+.HeroAdmin2 {
+   background: white;
+   border-radius: 16px;
+   padding: 24px;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+   border: none;
+}
+
+.TitleHeroAdmin2 {
+   margin-bottom: 20px;
+}
+
+.TitleHeroAdmin2 p:first-child {
+   font-size: 18px;
+   font-weight: 600;
+   color: #1f2937;
+}
+
+.TitleHeroAdmin2 p:last-child {
+   font-size: 14px;
+   color: #6b7280;
+}
+
+.TitleHeroAdmin2 button {
+   background: #f3f4f6;
+   border: none;
+   padding: 10px 16px;
+   border-radius: 8px;
+   font-size: 14px;
+   font-weight: 500;
+   cursor: pointer;
+   transition: all 0.2s ease;
+}
+
+.TitleHeroAdmin2 button:hover {
+   background: #880000;
+   color: white;
+}
+
+/* --- User Table --- */
+.UserTable {
+   width: 100%;
+   overflow-x: auto;
+   background: white;
+   border-radius: 16px;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.UserTable table {
+   min-width: 900px;
+   width: 100%;
+   border-collapse: collapse;
+}
+
+.UserTable thead {
+   background: #f8fafc;
+}
+
+.UserTable th {
+   padding: 16px;
+   text-align: left;
+   font-size: 12px;
+   font-weight: 600;
+   color: #6b7280;
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+   border-bottom: 1px solid #e5e7eb;
+}
+
+.UserTable td {
+   padding: 16px;
+   font-size: 14px;
+   color: #374151;
+   border-bottom: 1px solid #f3f4f6;
+}
+
+.UserTable tbody tr:hover {
+   background: #f9fafb;
+}
+
+/* --- Action Buttons --- */
+.btn-suspend,
+.btn-activate {
+   padding: 8px 16px;
+   font-size: 13px;
+   font-weight: 600;
+   cursor: pointer;
+   border: none;
+   border-radius: 6px;
+   transition: all 0.2s ease;
+}
+
+.btn-suspend {
+   background: #fef3c7;
+   color: #92400e;
+}
+
+.btn-suspend:hover {
+   background: #fcd34d;
+}
+
+.btn-activate {
+   background: #dcfce7;
+   color: #166534;
+}
+
+.btn-activate:hover {
+   background: #86efac;
+}
+
+.btn-delete {
+   padding: 8px 16px;
+   font-size: 13px;
+   font-weight: 600;
+   background: #fee2e2;
+   color: #991b1b;
+   border: none;
+   border-radius: 6px;
+   cursor: pointer;
+   transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+   background: #fca5a5;
+}
+
+.btn-dtls {
+   padding: 8px 16px;
+   font-size: 13px;
+   font-weight: 600;
+   background: #dbeafe;
+   color: #1e40af;
+   border: none;
+   border-radius: 6px;
+   cursor: pointer;
+   transition: all 0.2s ease;
+}
+
+.btn-dtls:hover {
+   background: #93c5fd;
+}
+
+/* Disabled states */
+.btn-suspend:disabled,
+.btn-activate:disabled,
+.btn-delete:disabled,
+.btn-dtls:disabled {
+   background: #f3f4f6;
+   color: #9ca3af;
+   cursor: not-allowed;
+}
+
+/* --- Popup Styling --- */
+.Popup {
+   padding: 20px;
+}
+
+.Popup h2 {
+   margin-bottom: 20px;
+   color: #1f2937;
+}
+
+.popup-grid {
+   display: grid;
+   gap: 12px;
+}
+
+.popup-grid p {
+   padding: 12px;
+   background: #f9fafb;
+   border-radius: 8px;
+   font-size: 14px;
+}
+
+.popup-grid strong {
+   color: #6b7280;
+   margin-right: 8px;
+}

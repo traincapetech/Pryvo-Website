@@ -1,0 +1,145 @@
+.admin-anlytics-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.admin-anlytics-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Admin-analytics-content {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 24px;
+    width: 100%;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    min-height: calc(100vh - 60px);
+}
+
+/* --- Charts Row --- */
+.userdetailsNsubscription {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 24px;
+}
+
+.users_anlytics,
+.subscription-anlytics {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: none;
+}
+
+.users_anlytics p,
+.subscription-anlytics p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* --- Plans Section --- */
+.plans-list {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: none;
+}
+
+.plans-list h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 30px;
+}
+
+.plans-wk,
+.plans {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 24px;
+    background: #f9fafb;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+}
+
+.plans-wk:hover,
+.plans:hover {
+    transform: translateX(5px);
+    background: #f3f4f6;
+}
+
+.plans-wk img,
+.plans img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.plans-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.plans-details strong {
+    font-size: 18px;
+    font-weight: 700;
+    color: #880000;
+    margin-bottom: 8px;
+}
+
+.plans-details span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+}
+
+.plans-details span h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #6b7280;
+    margin: 0;
+}
+
+.plans-details span p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #374151;
+    margin: 0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+    .Admin-analytics-content {
+        padding: 20px;
+    }
+
+    .userdetailsNsubscription {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .plans-wk,
+    .plans {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .plans-details span {
+        justify-content: center;
+    }
+}

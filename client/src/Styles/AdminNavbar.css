@@ -1,0 +1,82 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.Admin-Nav {
+  width: 240px;
+  background: #2f2f2f;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  transition: width 0.3s ease;
+  gap: 50px;
+  justify-content: space-between;
+}
+
+.Admin-nav-logout {
+    margin-top: auto;
+    margin-bottom: 20px;
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+    color: red;
+    justify-content: center;
+}
+
+.Admin-nav-logout a{
+    color: red;
+    text-decoration: none;
+    padding: 12px 20px;
+}
+
+.Admin-Nav.closed {
+  width: 0;
+  overflow: hidden;
+}
+
+.Admin-Nav a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+}
+
+.Admin-Nav a:hover {
+  background: #800000;
+}
+.toggle-btn {
+  position: fixed;
+  left: 240px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #800000;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: left 0.3s ease;
+}
+
+.toggle-btn.closed {
+  left: 0;
+}
+@media (max-width: 768px) {
+  .Admin-Nav {
+    position: fixed;
+    height: 100vh;
+    z-index: 999;
+  }
+  
+  .Admin-Nav.open {
+    width: 200px;
+  }
+
+  .toggle-btn {
+    left: 200px;
+  }
+  
+  .toggle-btn.closed {
+    left: 0;
+  }
+}

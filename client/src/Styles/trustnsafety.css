@@ -1,0 +1,110 @@
+/* ===== Root spacing for fixed navbar ===== */
+.trust-section {
+    padding-top: 120px; /* navbar offset */
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    width: 100%;
+}
+
+/* ===== Title ===== */
+.trust-title {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.trust-title h1 {
+    font-size: 36px;
+}
+
+.trust-title p {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 600;
+    color: #6d6c6c;
+}
+
+/* ===== Content Blocks ===== */
+.trust-descr {
+    max-width: 900px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.trust-descr h3 {
+    font-size: 20px;
+    color: #880000;
+}
+
+.trust-descr p,
+.last-trust-descr {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* ===== Lists ===== */
+.trust-list {
+    font-size: 18px;
+    list-style: disc;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+/* ===== Divider ===== */
+.trust-descr hr {
+    border: none;
+    border-top: 1px solid #e2b6b6;
+}
+
+/* ===== Highlight ===== */
+.Note {
+    color: #880000;
+    font-weight: 600;
+}
+
+/* =========================
+   📱 RESPONSIVE BREAKPOINTS
+   ========================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .trust-title h1 {
+        font-size: 32px;
+    }
+
+    .trust-descr p,
+    .last-trust-descr,
+    .trust-list {
+        font-size: 17px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .trust-section {
+        padding-top: 100px;
+        gap: 48px;
+    }
+
+    .trust-title h1 {
+        font-size: 26px;
+    }
+
+    .trust-descr h3 {
+        font-size: 18px;
+    }
+
+    .trust-descr p,
+    .trust-list,
+    .last-trust-descr {
+        font-size: 16px;
+    }
+}

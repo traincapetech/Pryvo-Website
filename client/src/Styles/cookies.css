@@ -1,0 +1,152 @@
+/* =========================
+   BASE LAYOUT
+========================= */
+
+.cookies-section {
+    padding: 140px 20px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.cookies-title {
+    color: #880000;
+    font-size: 32px;
+    text-align: center;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.cookies-descr {
+    width: 100%;
+    max-width: 900px;
+    font-weight: 500;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* HEADINGS */
+.cookies-descr h3 {
+    font-size: 26px;
+    color: #000;
+}
+
+/* PARAGRAPHS */
+.cookies-descr p {
+    font-size: 18px;
+    color: #3d3131;
+    line-height: 1.9rem;
+}
+
+/* =========================
+   LISTS
+========================= */
+
+.cookies-list {
+    font-size: 18px;
+    color: #3d3131;
+    line-height: 1.8em;
+    padding-left: 22px;
+    list-style: disc;
+}
+
+/* =========================
+   NOTES
+========================= */
+
+.Note-only {
+    border-left: 6px solid gray;
+    padding-left: 20px;
+}
+
+.Note {
+    font-weight: 600;
+}
+
+/* =========================
+   ITALIC
+========================= */
+
+.italic-only {
+    font-style: italic;
+}
+
+/* =========================
+   TABLET (≤768px)
+========================= */
+
+@media (max-width: 768px) {
+
+    .cookies-section {
+        padding-top: 120px;
+        gap: 60px;
+    }
+
+    .cookies-title {
+        font-size: 26px;
+    }
+
+    .cookies-descr {
+        font-size: 16px;
+    }
+
+    .cookies-descr h3 {
+        font-size: 22px;
+    }
+
+    .cookies-descr p,
+    .cookies-list {
+        font-size: 16px;
+        line-height: 1.7rem;
+    }
+}
+
+/* =========================
+   MOBILE (≤480px)
+========================= */
+
+@media (max-width: 480px) {
+
+    .cookies-section {
+        padding: 110px 14px 60px;
+        gap: 45px;
+    }
+
+    .cookies-title {
+        font-size: 22px;
+    }
+
+    .cookies-descr {
+        width: 100%;
+        font-size: 15px;
+        gap: 20px;
+    }
+
+    .cookies-descr h3 {
+        font-size: 19px;
+    }
+
+    .cookies-descr p,
+    .cookies-list {
+        font-size: 15px;
+        line-height: 1.6rem;
+    }
+
+    .cookies-list {
+        padding-left: 18px;
+    }
+
+    .Note-only {
+        border-left-width: 4px;
+        padding-left: 14px;
+    }
+}

@@ -1,0 +1,443 @@
+/**
+ * PRYVO - How It Works Page Styles
+ * 
+ * Design consistent with premium Home page
+ */
+
+/* ============ VARIABLES ============ */
+:root {
+  --primary: #880000;
+  --primary-light: #a82525;
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+  --bg-cream: #fdfbf7;
+  --gradient-hero: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 30%, #fef3e6 70%, #fffbeb 100%);
+  --gradient-primary: linear-gradient(135deg, #880000 0%, #a82525 50%, #c44242 100%);
+  --gradient-romantic: linear-gradient(135deg, #ff6b8a 0%, #f472b6 50%, #8b5cf6 100%);
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.12);
+  --radius-md: 20px;
+  --radius-lg: 32px;
+}
+
+/* ============ PAGE ============ */
+.how-works-page {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ============ HERO ============ */
+.how-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 140px 5% 80px;
+  background: var(--gradient-hero);
+  text-align: center;
+}
+
+.how-hero .hero-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 107, 138, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.how-hero-content {
+  max-width: 700px;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+.hero-eyebrow svg {
+  color: #ff6b8a;
+}
+
+.how-hero-content h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-dark);
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+.gradient-text {
+  background: var(--gradient-romantic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.how-hero-content>p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* ============ STEPS SECTION ============ */
+.steps-section {
+  padding: 80px 5%;
+  background: #fff;
+}
+
+.steps-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 32px;
+}
+
+.step-card {
+  background: white;
+  padding: 36px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid #f3f4f6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+.step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.step-number {
+  font-size: 48px;
+  font-weight: 800;
+  color: #f3f4f6;
+  font-family: 'Playfair Display', serif;
+}
+
+.step-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #fce7f3 0%, #fef3e6 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-icon svg {
+  font-size: 24px;
+  color: var(--primary);
+}
+
+.step-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+
+.step-card>p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.step-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step-highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.step-highlights svg {
+  color: #22c55e;
+  font-size: 14px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.step-note {
+  padding: 16px;
+  background: #fef7f0;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary);
+}
+
+.step-note strong {
+  display: block;
+  font-size: 12px;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.step-note p {
+  font-size: 14px;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============ DATA SECTION ============ */
+.data-section {
+  padding: 100px 5%;
+  background: linear-gradient(180deg, #880000 0%, #a82525 100%);
+}
+
+.data-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.data-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.data-icon svg {
+  font-size: 36px;
+  color: white;
+}
+
+.data-content h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-family: 'Playfair Display', serif;
+}
+
+.data-content h2 span {
+  color: #fcd34d;
+}
+
+.data-content>p {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+.data-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.data-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.data-feature svg {
+  color: #22c55e;
+}
+
+.data-promise {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.data-promise strong {
+  color: #fcd34d;
+}
+
+/* ============ AUDIENCE SECTION ============ */
+.audience-section {
+  padding: 100px 5%;
+  background: #fef7f0;
+}
+
+.audience-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.audience-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #fce7f3 0%, #fef3e6 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.audience-icon svg {
+  font-size: 36px;
+  color: var(--primary);
+}
+
+.audience-content h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  margin-bottom: 40px;
+  font-family: 'Playfair Display', serif;
+}
+
+.audience-content h2 span {
+  color: var(--primary);
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.audience-card {
+  background: white;
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.audience-emoji {
+  font-size: 40px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.audience-card p {
+  font-size: 15px;
+  color: var(--text-dark);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ============ CTA SECTION ============ */
+.how-cta-section {
+  padding: 100px 5%;
+  background: var(--gradient-hero);
+}
+
+.how-cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.how-cta-content h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-family: 'Playfair Display', serif;
+}
+
+.how-cta-content>p {
+  font-size: 17px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 40px;
+  background: var(--gradient-primary);
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(136, 0, 0, 0.3);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .how-hero {
+    padding: 120px 5% 60px;
+    min-height: auto;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-card {
+    padding: 28px;
+  }
+
+  .data-section,
+  .audience-section,
+  .how-cta-section {
+    padding: 70px 5%;
+  }
+
+  .data-features {
+    grid-template-columns: 1fr;
+  }
+
+  .audience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .audience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-number {
+    font-size: 36px;
+  }
+
+  .step-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
