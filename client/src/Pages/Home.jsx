@@ -1,6 +1,6 @@
 /**
  * PRYVO - Premium Dating Landing Page
- * 
+ *
  * Design Philosophy:
  * - Emotionally resonant, not transactional
  * - Motion that feels human and calming
@@ -9,48 +9,62 @@
  * - Mobile-first, enterprise polish
  */
 
-import React, { useEffect, useState, useRef } from 'react';
-import '../Styles/Home.css';
-import { Link, useNavigate } from 'react-router-dom';
-import { useStore } from '../store/store';
-import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-import { FaCheckCircle, FaShieldAlt, FaHeart, FaLock, FaUserCheck, FaPlay, FaApple, FaGooglePlay } from 'react-icons/fa';
-import { BsFire, BsStars } from 'react-icons/bs';
+import React, { useEffect, useState, useRef } from "react";
+import "../Styles/Home.css";
+import { Link, useNavigate } from "react-router-dom";
+import { useStore } from "../store/store";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import {
+  FaCheckCircle,
+  FaShieldAlt,
+  FaHeart,
+  FaLock,
+  FaUserCheck,
+  FaPlay,
+  FaApple,
+  FaGooglePlay,
+} from "react-icons/fa";
+import { BsFire, BsStars } from "react-icons/bs";
+import NeonHeart from "../Components/NeonHeart";
 
 // ============ ANIMATION VARIANTS ============
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } }
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
 };
 
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 }
-  }
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+  },
 };
 
 const floatingCard = {
   animate: {
     y: [0, -15, 0],
     rotate: [0, 2, 0, -2, 0],
-    transition: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-  }
+    transition: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+  },
 };
 
 const pulseHeart = {
   animate: {
     scale: [1, 1.15, 1],
-    transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
-  }
+    transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" },
+  },
 };
 
 // ============ SECTION COMPONENT ============
 const Section = ({ children, className = "", delay = 0 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  
+
   return (
     <motion.section
       ref={ref}
@@ -65,11 +79,19 @@ const Section = ({ children, className = "", delay = 0 }) => {
 };
 
 // ============ MOCK PROFILE CARD ============
-const ProfileCard = ({ name, age, prompt, promptAnswer, image, position, delay = 0 }) => (
-  <motion.div 
+const ProfileCard = ({
+  name,
+  age,
+  prompt,
+  promptAnswer,
+  image,
+  position,
+  delay = 0,
+}) => (
+  <motion.div
     className={`profile-card ${position}`}
-    initial={{ opacity: 0, scale: 0.8, rotate: position === 'left' ? -15 : 10 }}
-    animate={{ opacity: 1, scale: 1, rotate: position === 'left' ? -8 : 6 }}
+    initial={{ opacity: 0, scale: 0.8, rotate: position === "left" ? -15 : 10 }}
+    animate={{ opacity: 1, scale: 1, rotate: position === "left" ? -8 : 6 }}
     transition={{ duration: 1, delay }}
     whileHover={{ scale: 1.02, rotate: 0 }}
   >
@@ -83,7 +105,9 @@ const ProfileCard = ({ name, age, prompt, promptAnswer, image, position, delay =
       </div>
       <div className="profile-info">
         <div className="profile-name-row">
-          <span className="profile-name">{name}, {age}</span>
+          <span className="profile-name">
+            {name}, {age}
+          </span>
           <span className="online-indicator" />
         </div>
         {prompt && (
@@ -99,7 +123,7 @@ const ProfileCard = ({ name, age, prompt, promptAnswer, image, position, delay =
 
 // ============ FEATURE CARD ============
 const FeatureCard = ({ icon: Icon, title, description, delay = 0 }) => (
-  <motion.div 
+  <motion.div
     className="feature-card"
     variants={fadeInUp}
     whileHover={{ y: -8, transition: { duration: 0.3 } }}
@@ -114,10 +138,7 @@ const FeatureCard = ({ icon: Icon, title, description, delay = 0 }) => (
 
 // ============ TESTIMONIAL CARD ============
 const TestimonialCard = ({ quote, name, title, image, delay = 0 }) => (
-  <motion.div 
-    className="testimonial-card"
-    variants={fadeInUp}
-  >
+  <motion.div className="testimonial-card" variants={fadeInUp}>
     <div className="quote-mark">"</div>
     <p className="testimonial-quote">{quote}</p>
     <div className="testimonial-author">
@@ -164,7 +185,7 @@ const Home = () => {
   // ========== LOADING SCREEN ==========
   if (loading) {
     return (
-      <div className="loading-screen">
+      <NeonHeart>
         <div className="loading-letters">
           {word.split("").map((letter, index) => (
             <motion.span
@@ -177,31 +198,35 @@ const Home = () => {
               }}
               transition={{ duration: 0.4, ease: "easeOut" }}
               className="loading-letter"
+              style={{
+                color: "white",
+                textShadow: "0 0 10px rgba(255,255,255,0.5)",
+              }}
             >
               {letter}
             </motion.span>
           ))}
         </div>
-        <motion.div 
+        <motion.div
           className="loading-tagline"
           initial={{ opacity: 0 }}
           animate={{ opacity: visibleLetters === word.length ? 1 : 0 }}
+          style={{ color: "rgba(255, 255, 255, 0.8)", marginTop: "10px" }}
         >
           Connections that feel right
         </motion.div>
-      </div>
+      </NeonHeart>
     );
   }
 
   return (
     <div className="home-page">
-      
       {/* ========== HERO SECTION ========== */}
       <section className="hero-section">
         <div className="hero-gradient" />
-        
+
         <div className="hero-content">
-          <motion.div 
+          <motion.div
             className="hero-text"
             initial="hidden"
             animate="visible"
@@ -214,16 +239,14 @@ const Home = () => {
               Find someone who <span className="gradient-text">gets you</span>
             </motion.h1>
             <motion.p variants={fadeInUp}>
-              Real profiles. Genuine intentions. Meaningful connections. 
-              Pryvo is where quality matters more than quantity.
+              Real profiles. Genuine intentions. Meaningful connections. Pryvo
+              is where quality matters more than quantity.
             </motion.p>
             <motion.div className="hero-cta" variants={fadeInUp}>
               <button className="btn-primary">
                 <FaGooglePlay /> Get the App
               </button>
-              <button className="btn-secondary">
-                How it works
-              </button>
+              <button className="btn-secondary">How it works</button>
             </motion.div>
             <motion.div className="hero-trust" variants={fadeInUp}>
               <span>🔒 Verified profiles only</span>
@@ -232,18 +255,18 @@ const Home = () => {
           </motion.div>
 
           <div className="hero-visual">
-            <ProfileCard 
-              name="Priya" 
-              age={28} 
+            <ProfileCard
+              name="Priya"
+              age={28}
               image="/single.jpg"
               prompt="I'm looking for..."
               promptAnswer="Someone who laughs at my bad puns"
               position="left"
               delay={0.5}
             />
-            <ProfileCard 
-              name="Arjun" 
-              age={31} 
+            <ProfileCard
+              name="Arjun"
+              age={31}
               image="/single2.jpg"
               prompt="My ideal weekend..."
               promptAnswer="Coffee, hiking, then a cozy movie night"
@@ -251,7 +274,7 @@ const Home = () => {
               delay={0.7}
             />
             {/* Match Connection Line */}
-            <motion.div 
+            <motion.div
               className="match-connection"
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -265,7 +288,7 @@ const Home = () => {
           </div>
         </div>
 
-        <motion.div 
+        <motion.div
           className="scroll-indicator"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
@@ -280,11 +303,14 @@ const Home = () => {
         <div className="section-content">
           <div className="section-text">
             <span className="section-label">The Pryvo Difference</span>
-            <h2>Dating, but <span>done right</span></h2>
+            <h2>
+              Dating, but <span>done right</span>
+            </h2>
             <p>
-              We built Pryvo on a simple belief: everyone looking for love deserves 
-              a space that respects their time and intentions. No endless swiping. 
-              No games. Just real people ready for real connection.
+              We built Pryvo on a simple belief: everyone looking for love
+              deserves a space that respects their time and intentions. No
+              endless swiping. No games. Just real people ready for real
+              connection.
             </p>
             <div className="highlight-list">
               <div className="highlight-item">
@@ -300,12 +326,19 @@ const Home = () => {
                 <span>Designed for meaningful relationships</span>
               </div>
             </div>
-            <button className="btn-outline" onClick={() => navigate('/howItWork')}>
+            <button
+              className="btn-outline"
+              onClick={() => navigate("/howItWork")}
+            >
               Learn how we do it →
             </button>
           </div>
           <div className="section-visual">
-            <img src="/couple.png" alt="Happy couple" className="section-image" />
+            <img
+              src="/couple.png"
+              alt="Happy couple"
+              className="section-image"
+            />
           </div>
         </div>
       </Section>
@@ -327,11 +360,15 @@ const Home = () => {
                   <div className="preview-prompts">
                     <div className="prompt-bubble">
                       <span className="prompt-q">My love language is...</span>
-                      <span className="prompt-a">Acts of service & quality time ✨</span>
+                      <span className="prompt-a">
+                        Acts of service & quality time ✨
+                      </span>
                     </div>
                     <div className="prompt-bubble">
                       <span className="prompt-q">Dating me is like...</span>
-                      <span className="prompt-a">Having a best friend who also gives great hugs</span>
+                      <span className="prompt-a">
+                        Having a best friend who also gives great hugs
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -340,11 +377,13 @@ const Home = () => {
           </div>
           <div className="section-text">
             <span className="section-label">Beyond the surface</span>
-            <h2>Real profiles, <span>real intentions</span></h2>
+            <h2>
+              Real profiles, <span>real intentions</span>
+            </h2>
             <p>
-              Every profile tells a story. Our unique prompts help you share 
-              who you really are—and discover what makes others tick. 
-              Connect over shared values, not just photos.
+              Every profile tells a story. Our unique prompts help you share who
+              you really are—and discover what makes others tick. Connect over
+              shared values, not just photos.
             </p>
             <div className="stat-row">
               <div className="stat">
@@ -353,7 +392,9 @@ const Home = () => {
               </div>
               <div className="stat">
                 <span className="stat-number">3x</span>
-                <span className="stat-label">More meaningful conversations</span>
+                <span className="stat-label">
+                  More meaningful conversations
+                </span>
               </div>
             </div>
           </div>
@@ -364,29 +405,32 @@ const Home = () => {
       <Section className="story-section section-3">
         <div className="section-header-centered">
           <span className="section-label">Your safety, our priority</span>
-          <h2>Privacy, safety, and <span>control</span></h2>
+          <h2>
+            Privacy, safety, and <span>control</span>
+          </h2>
           <p>
-            We take your security seriously so you can focus on what matters—finding connection.
+            We take your security seriously so you can focus on what
+            matters—finding connection.
           </p>
         </div>
-        <motion.div 
+        <motion.div
           className="features-grid"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          <FeatureCard 
+          <FeatureCard
             icon={FaUserCheck}
             title="Verified Profiles"
             description="Photo verification ensures you're talking to real people, not bots or catfishes."
           />
-          <FeatureCard 
+          <FeatureCard
             icon={FaShieldAlt}
             title="Advanced Moderation"
             description="AI-powered safety features and 24/7 human review keep the community respectful."
           />
-          <FeatureCard 
+          <FeatureCard
             icon={FaLock}
             title="Privacy Controls"
             description="You decide who sees what. Hide your profile, block anyone, anytime."
@@ -398,28 +442,30 @@ const Home = () => {
       <Section className="testimonials-section">
         <div className="section-header-centered">
           <span className="section-label">Love stories</span>
-          <h2>What our members <span>say</span></h2>
+          <h2>
+            What our members <span>say</span>
+          </h2>
         </div>
-        <motion.div 
+        <motion.div
           className="testimonials-grid"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <TestimonialCard 
+          <TestimonialCard
             quote="Pryvo felt different from day one. The conversations were actually meaningful, and I met my partner within 3 weeks."
             name="Alexander Thompson"
             title="Product Designer, New York"
             image="/profile2.jpg"
           />
-          <TestimonialCard 
+          <TestimonialCard
             quote="Finally, an app that prioritizes quality over swipe-fests. I feel safe and respected here."
             name="Emily Carter"
             title="Marketing Strategist, Toronto"
             image="/profile3.jpg"
           />
-          <TestimonialCard 
+          <TestimonialCard
             quote="The prompts helped me show my real personality. Found someone who loves my weird hobbies too!"
             name="Sophia Martinez"
             title="UX Researcher, Barcelona"
@@ -431,7 +477,7 @@ const Home = () => {
       {/* ========== FINAL CTA ========== */}
       <Section className="final-cta-section">
         <div className="cta-content">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -444,10 +490,10 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Join thousands who found meaningful connection on Pryvo. 
-            Download free and start your journey today.
+            Join thousands who found meaningful connection on Pryvo. Download
+            free and start your journey today.
           </motion.p>
-          <motion.div 
+          <motion.div
             className="cta-buttons"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -474,21 +520,25 @@ const Home = () => {
         <div className="newsletter-content">
           <div className="newsletter-text">
             <h3>Stay in the loop</h3>
-            <p>Get dating tips, success stories, and Pryvo updates. No spam, ever.</p>
+            <p>
+              Get dating tips, success stories, and Pryvo updates. No spam,
+              ever.
+            </p>
           </div>
           <form onSubmit={handleSubmit} className="newsletter-form">
-            <input 
-              type="email" 
-              placeholder="Your email address" 
-              value={email} 
+            <input
+              type="email"
+              placeholder="Your email address"
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <button type="submit" className="btn-primary">Subscribe</button>
+            <button type="submit" className="btn-primary">
+              Subscribe
+            </button>
           </form>
         </div>
       </Section>
-
     </div>
   );
 };
