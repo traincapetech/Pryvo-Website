@@ -25,7 +25,7 @@ import {
   FaGooglePlay,
 } from "react-icons/fa";
 import { BsFire, BsStars } from "react-icons/bs";
-import NeonHeart from "../Components/NeonHeart";
+import ProfessionalHeartLoader from "../Components/ProfessionalHeartLoader.jsx";
 
 // ============ ANIMATION VARIANTS ============
 const fadeInUp = {
@@ -122,7 +122,7 @@ const ProfileCard = ({
 );
 
 // ============ FEATURE CARD ============
-const FeatureCard = ({ icon: Icon, title, description, delay = 0 }) => (
+const FeatureCard = ({  icon: Icon , title, description}) => (
   <motion.div
     className="feature-card"
     variants={fadeInUp}
@@ -182,42 +182,64 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // ========== LOADING SCREEN ==========
-  if (loading) {
-    return (
-      <NeonHeart>
-        <div className="loading-letters">
-          {word.split("").map((letter, index) => (
-            <motion.span
-              key={index}
-              initial={{ opacity: 0, y: 30, scale: 0.8 }}
-              animate={{
-                opacity: index < visibleLetters ? 1 : 0,
-                y: index < visibleLetters ? 0 : 30,
-                scale: index < visibleLetters ? 1 : 0.8,
-              }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="loading-letter"
-              style={{
-                color: "white",
-                textShadow: "0 0 10px rgba(255,255,255,0.5)",
-              }}
-            >
-              {letter}
-            </motion.span>
-          ))}
-        </div>
-        <motion.div
-          className="loading-tagline"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: visibleLetters === word.length ? 1 : 0 }}
-          style={{ color: "rgba(255, 255, 255, 0.8)", marginTop: "10px" }}
-        >
-          Connections that feel right
-        </motion.div>
-      </NeonHeart>
-    );
-  }
+// ============ LOADING SCREEN ============
+if (loading) {
+  return (
+    <ProfessionalHeartLoader>
+      <div className="loading-letters" style={{ display: 'flex', gap: '4px' }}>
+        {word.split("").map((letter, index) => (
+          <motion.span
+            key={index}
+            initial={{ opacity: 0, y: 15, rotateX: 90 }}
+            animate={{ 
+              opacity: index < visibleLetters ? 1 : 0.1,
+              y: index < visibleLetters ? 0 : 15,
+              rotateX: index < visibleLetters ? 0 : 90
+            }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            style={{ 
+              fontSize: "3rem", 
+              fontWeight: "900",
+              marginRight: "35px",
+              alignItems: "center",
+              
+              // --- PREMIUM ROYAL GRADIENT ---
+              // Deep Maroon/Red to a Sophisticated Pinkish-Purple
+              background: "linear-gradient(135deg, #121212 10%, #FF2D55 50%, #8E2DE2 90%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              
+              // Text ko "Pop" karne ke liye soft professional shadow
+              filter: "drop-shadow(0px 10px 15px rgba(255, 45, 85, 0.2))",
+              letterSpacing: "-3px",
+              perspective: "1000px"
+            }}
+          >
+            {letter}
+          </motion.span>
+        ))}
+      </div>
+      
+      <motion.div
+        className="loading-tagline"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: visibleLetters === word.length ? 1 : 0 }}
+        transition={{ delay: 0.3 }}
+        style={{ 
+          color: "#444", 
+          fontWeight: "600", 
+          marginTop: "20px",
+          fontSize: "0.9rem",
+          letterSpacing: "4px",
+          textTransform: "uppercase",
+          opacity: 0.9
+        }}
+      >
+    Connection the feel right...
+      </motion.div>
+    </ProfessionalHeartLoader>
+  );
+}
 
   return (
     <div className="home-page">
