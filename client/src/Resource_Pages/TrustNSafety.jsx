@@ -138,7 +138,7 @@ const TrustNSafety = () => {
             Building a community where respect, safety, and trust come first
           </motion.p>
           <motion.p className="last-updated" variants={fadeInUp}>
-            Last Updated: January 2025
+            Last Updated: November 20, 2026
           </motion.p>
         </motion.div>
       </section>
@@ -282,8 +282,9 @@ const TrustNSafety = () => {
             <li>Consent and respectful interactions</li>
           </ul>
           <p>
-            Please review our <Link to="/dating-tips" className="inline-link">Safe Dating Tips</Link> for 
-            practical advice on staying safe while connecting with others.
+            Please review our <Link to="/dating_tips" className="inline-link">Safe Dating Tips</Link> for 
+            practical advice on staying safe while connecting with others, and read our{' '}
+            <Link to="/child-safety" className="inline-link">Child Safety &amp; CSAE Standards</Link>.
           </p>
         </ContentSection>
 

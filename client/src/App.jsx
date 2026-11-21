@@ -4,6 +4,8 @@ import Security from './Legal_Pages/Security.jsx'
 import Terms from './Legal_Pages/Terms.jsx'
 import Privacy from './Legal_Pages/Privacy.jsx'
 import Cookies from './Legal_Pages/Cookies.jsx'
+import DeleteAccount from './Legal_Pages/DeleteAccount.jsx'
+import ChildSafety from './Legal_Pages/ChildSafety.jsx'
 import Dating_tips from './Resource_Pages/Dating_tips.jsx'
 import FAQ from './Resource_Pages/Faq.jsx'
 import Trust from './Resource_Pages/TrustNSafety.jsx'
@@ -56,9 +58,14 @@ function App() {
         <Route element={<PublicLayout />}>
           <Route path='/' element={<Home />} />
           <Route path='/Security' element={<Security />} />
+          <Route path='/security' element={<Security />} />
           <Route path='/terms' element={<Terms />} />
+          <Route path='/terms-of-service' element={<Terms />} />
           <Route path='/cookies' element={<Cookies />} />
           <Route path='/privacy' element={<Privacy />} />
+          <Route path='/privacy-policy' element={<Privacy />} />
+          <Route path='/delete-account' element={<DeleteAccount />} />
+          <Route path='/child-safety' element={<ChildSafety />} />
           <Route path='/dating_tips' element={<Dating_tips />} />
           <Route path='/faq' element={<FAQ />} />
           <Route path='/trust' element={<Trust />} />

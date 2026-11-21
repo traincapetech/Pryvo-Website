@@ -52,7 +52,7 @@ const Contact = () => {
           user_email: email,
           subject,
           description,
-          to_email: "ashu0986ak@gmail.com"
+          to_email: "pryvo@traincapetech.in"
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
@@ -235,9 +235,10 @@ const Contact = () => {
             <div className="info-card">
               <h3>Before You Contact Us</h3>
               <ul>
+                <li>Want to delete your account immediately? Use our <a href="/delete-account">Account Deletion page</a></li>
                 <li>Check our <a href="/faq">FAQ</a> for quick answers</li>
-                <li>Review our <a href="/trustNSafety">Trust & Safety</a> guidelines</li>
-                <li>Read our <a href="/privacy-policy">Privacy Policy</a></li>
+                <li>Review our <a href="/trust">Trust &amp; Safety</a> guidelines &amp; <a href="/child-safety">Child Safety Standards</a></li>
+                <li>Read our <a href="/privacy">Privacy Policy</a></li>
               </ul>
             </div>
             <div className="info-card highlight">
