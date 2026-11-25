@@ -1,0 +1,55 @@
+Options -MultiViews
+DirectoryIndex index.html
+
+<IfModule mod_mime.c>
+  AddType text/markdown .md
+  AddType application/json .json
+  AddType application/xml .xml
+  AddType text/plain .txt
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Ensure CDN and proxies separate HTML vs Markdown responses by Accept header
+  Header append Vary "Accept"
+
+  # RFC 8288 Link headers advertising llms.txt, Markdown alternate, and MCP Server Card
+  <FilesMatch "^(index\.html|index\.md)$">
+    Header add Link '<https://pryvo.traincapetech.in/llms.txt>; rel="describedby"; type="text/plain"'
+    Header add Link '<https://pryvo.traincapetech.in/index.md>; rel="alternate"; type="text/markdown"'
+    Header add Link '<https://pryvo.traincapetech.in/.well-known/mcp/server-card.json>; rel="describedby"; type="application/json"'
+  </FilesMatch>
+
+  # Allow AI agents and web clients to read machine-readable discovery endpoints cross-origin
+  <FilesMatch "^(robots\.txt|sitemap\.xml|llms\.txt|index\.md|server-card\.json)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>
+
+<Files "index.md">
+  ForceType "text/markdown; charset=utf-8"
+</Files>
+
+<Files "llms.txt">
+  ForceType "text/plain; charset=utf-8"
+</Files>
+
+<Files "server-card.json">
+  ForceType "application/json; charset=utf-8"
+</Files>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Content negotiation: serve Markdown on homepage when agent sends Accept: text/markdown
+  RewriteCond %{HTTP_ACCEPT} text/markdown [NC]
+  RewriteRule ^$ /index.md [L,T=text/markdown;charset=utf-8]
+
+  # Serve existing static files and directories directly (including .well-known, robots.txt, sitemap.xml, llms.txt, index.md)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # SPA fallback to index.html for React Router routes
+  RewriteRule ^ /index.html [L]
+</IfModule>

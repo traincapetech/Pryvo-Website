@@ -162,6 +162,8 @@ const Contact = () => {
                 <motion.form 
                   className="contact-form"
                   onSubmit={handleSubmit}
+                  toolname="submit_pryvo_support_request"
+                  tooldescription="Submit a customer support, privacy, or safety inquiry to Pryvo"
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   transition={{ duration: 0.4 }}

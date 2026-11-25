@@ -24,13 +24,16 @@ const Footer = () => {
                                 </span>
                             </div>
                         </div>
+                        <div style={{ marginTop: "8px", fontSize: "0.9rem" }}>
+                            <a href="mailto:pryvo@traincapetech.in">pryvo@traincapetech.in</a>
+                        </div>
                     </div>
                 </div>
                 <div className="right-side-footer">
                     <div className="index">
                         <h3 className='footer-title'>Index</h3>
                         <Link to='/howItWork'><span>How it works</span></Link>
-                        <Link to='/Impact'><span>Impact</span></Link>
+                        <Link to='/Impact'><span>About &amp; Impact</span></Link>
                         <Link to='/labs'><span>Labs</span></Link>
                         <Link to='/newsletter'><span>NewsLetter</span></Link>
                         <Link to='/contact'><span>Contact</span></Link>

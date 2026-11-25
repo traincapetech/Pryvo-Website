@@ -154,11 +154,8 @@ const TestimonialCard = ({ quote, name, title, image, delay = 0 }) => (
 // ============ MAIN COMPONENT ============
 const Home = () => {
   const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(true);
   const { subscribe } = useStore();
   const navigate = useNavigate();
-  const word = "PRYVO";
-  const [visibleLetters, setVisibleLetters] = useState(0);
 
   // Newsletter submit
   const handleSubmit = (e) => {
@@ -166,58 +163,6 @@ const Home = () => {
     subscribe(email, "landing_page");
     setEmail("");
   };
-
-  // Intro animation
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setVisibleLetters((prev) => {
-        if (prev === word.length) {
-          clearInterval(interval);
-          setTimeout(() => setLoading(false), 400);
-          return prev;
-        }
-        return prev + 1;
-      });
-    }, 200);
-    return () => clearInterval(interval);
-  }, []);
-
-  // ========== LOADING SCREEN ==========
-  if (loading) {
-    return (
-      <NeonHeart>
-        <div className="loading-letters">
-          {word.split("").map((letter, index) => (
-            <motion.span
-              key={index}
-              initial={{ opacity: 0, y: 30, scale: 0.8 }}
-              animate={{
-                opacity: index < visibleLetters ? 1 : 0,
-                y: index < visibleLetters ? 0 : 30,
-                scale: index < visibleLetters ? 1 : 0.8,
-              }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="loading-letter"
-              style={{
-                color: "white",
-                textShadow: "0 0 10px rgba(255,255,255,0.5)",
-              }}
-            >
-              {letter}
-            </motion.span>
-          ))}
-        </div>
-        <motion.div
-          className="loading-tagline"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: visibleLetters === word.length ? 1 : 0 }}
-          style={{ color: "rgba(255, 255, 255, 0.8)", marginTop: "10px" }}
-        >
-          Connections that feel right
-        </motion.div>
-      </NeonHeart>
-    );
-  }
 
   return (
     <div className="home-page">
@@ -243,10 +188,10 @@ const Home = () => {
               is where quality matters more than quantity.
             </motion.p>
             <motion.div className="hero-cta" variants={fadeInUp}>
-              <button className="btn-primary">
+              <button className="btn-primary" onClick={() => navigate("/howItWork")}>
                 <FaGooglePlay /> Get the App
               </button>
-              <button className="btn-secondary">How it works</button>
+              <button className="btn-secondary" onClick={() => navigate("/howItWork")}>How it works</button>
             </motion.div>
             <motion.div className="hero-trust" variants={fadeInUp}>
               <span>🔒 Verified profiles only</span>
@@ -525,9 +470,15 @@ const Home = () => {
               ever.
             </p>
           </div>
-          <form onSubmit={handleSubmit} className="newsletter-form">
+          <form
+            onSubmit={handleSubmit}
+            className="newsletter-form"
+            toolname="subscribe_pryvo_newsletter"
+            tooldescription="Subscribe an email address to Pryvo dating app updates and safety tips"
+          >
             <input
               type="email"
+              name="email"
               placeholder="Your email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}

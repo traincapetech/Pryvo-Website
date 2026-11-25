@@ -1,0 +1,129 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/server-card/v1.json",
+  "protocolVersion": "2025-06-18",
+  "name": "pryvo-web-info",
+  "version": "1.0.0",
+  "description": "Public information, safety documentation, and in-browser WebMCP tools for Pryvo (18+ dating app by Traincape Technologies Pvt Ltd).",
+  "endpoint": "https://pryvo.traincapetech.in/.well-known/mcp/server-card.json",
+  "homepage": "https://pryvo.traincapetech.in",
+  "serverInfo": {
+    "name": "pryvo-web-info",
+    "title": "Pryvo Public Information & WebMCP Server",
+    "version": "1.0.0"
+  },
+  "provider": {
+    "organization": "Traincape Technologies Pvt Ltd",
+    "url": "https://pryvo.traincapetech.in",
+    "contact": "pryvo@traincapetech.in"
+  },
+  "transport": {
+    "type": "webmcp",
+    "endpoint": "https://pryvo.traincapetech.in/",
+    "documentation": "https://pryvo.traincapetech.in/llms.txt"
+  },
+  "authentication": {
+    "required": false,
+    "schemes": []
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    },
+    "resources": {
+      "subscribe": false,
+      "listChanged": false
+    },
+    "prompts": {
+      "listChanged": false
+    }
+  },
+  "tools": [
+    {
+      "name": "get_pryvo_info",
+      "description": "Returns structured information about Pryvo (18+ dating app by Traincape Technologies Pvt Ltd), including features, safety standards, pricing, and support contacts.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "navigate_pryvo_page",
+      "description": "Navigates the browser to a public Pryvo page such as howItWork, Impact, trust, faq, contact, privacy, terms, security, child-safety, or delete-account.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "string",
+            "enum": [
+              "home",
+              "howItWork",
+              "Impact",
+              "trust",
+              "faq",
+              "dating_tips",
+              "contact",
+              "privacy",
+              "terms",
+              "security",
+              "cookies",
+              "child-safety",
+              "delete-account"
+            ],
+            "description": "Target public page identifier."
+          }
+        },
+        "required": ["page"],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "subscribe_pryvo_newsletter",
+      "description": "Subscribes an email address to Pryvo updates and dating safety tips.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "Email address to subscribe."
+          }
+        },
+        "required": ["email"],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "https://pryvo.traincapetech.in/llms.txt",
+      "name": "Pryvo LLMs.txt Directory",
+      "mimeType": "text/plain"
+    },
+    {
+      "uri": "https://pryvo.traincapetech.in/index.md",
+      "name": "Pryvo Homepage (Markdown)",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "https://pryvo.traincapetech.in/privacy",
+      "name": "Pryvo Privacy Policy",
+      "mimeType": "text/html"
+    },
+    {
+      "uri": "https://pryvo.traincapetech.in/terms",
+      "name": "Pryvo Terms of Service",
+      "mimeType": "text/html"
+    },
+    {
+      "uri": "https://pryvo.traincapetech.in/child-safety",
+      "name": "Pryvo Child Safety Standards",
+      "mimeType": "text/html"
+    },
+    {
+      "uri": "https://pryvo.traincapetech.in/delete-account",
+      "name": "Pryvo Self-Service Account Deletion",
+      "mimeType": "text/html"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# Pryvo (https://pryvo.traincapetech.in) — Crawl & Content Signals Policy
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /login
+Disallow: /signup
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
+Sitemap: https://pryvo.traincapetech.in/sitemap.xml

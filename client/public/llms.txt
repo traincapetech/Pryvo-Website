@@ -1,0 +1,38 @@
+# Pryvo
+
+> Pryvo is a modern 18+ dating application built by Traincape Technologies Pvt Ltd (New Delhi, India) for adults seeking genuine connections, expressive prompt-based profiles, real-time messaging, and safety-first moderation. Pryvo v1 is free to use on Android with zero hidden subscriptions or paywalls.
+
+## Overview
+
+- **Product:** Pryvo (Android app package `com.pryvo`)
+- **Developer:** Traincape Technologies Pvt Ltd
+- **Website:** https://pryvo.traincapetech.in
+- **Markdown Homepage:** https://pryvo.traincapetech.in/index.md
+- **Support & Privacy Email:** pryvo@traincapetech.in
+- **Age Requirement:** Strictly 18+ adults only
+
+## Core Pages
+
+- [Homepage](https://pryvo.traincapetech.in/): Overview of Pryvo's dating philosophy, profile prompts, safety controls, and app availability.
+- [How Pryvo Works](https://pryvo.traincapetech.in/howItWork): Step-by-step walkthrough of profile creation, discovery, matching, and real-time chat.
+- [Impact & About](https://pryvo.traincapetech.in/Impact): Mission, community values, and how Traincape Technologies builds respectful dating experiences.
+- [Pryvo Labs](https://pryvo.traincapetech.in/labs): Product research and safety innovation behind Pryvo.
+- [FAQ](https://pryvo.traincapetech.in/faq): Answers to common questions about accounts, matching, safety, and privacy.
+- [Safe Dating Tips](https://pryvo.traincapetech.in/dating_tips): Practical guidance for safe online conversations and first dates.
+- [Contact & Support](https://pryvo.traincapetech.in/contact): Direct support form and contact details (`pryvo@traincapetech.in`).
+
+## Safety, Privacy & Legal
+
+- [Trust & Safety](https://pryvo.traincapetech.in/trust): Automated photo moderation, text screening, one-tap block/report tools, and community standards.
+- [Child Safety & CSAE Standards](https://pryvo.traincapetech.in/child-safety): Zero-tolerance policy against child sexual abuse and exploitation (CSAE) and reporting procedures.
+- [Privacy Policy](https://pryvo.traincapetech.in/privacy): Complete disclosure of data collected, third-party processors, retention, and user rights.
+- [Terms of Service](https://pryvo.traincapetech.in/terms): Eligibility (18+), acceptable use, and service terms for Pryvo.
+- [Security](https://pryvo.traincapetech.in/security): Technical safeguards protecting user accounts, photos, and messages.
+- [Cookie Policy](https://pryvo.traincapetech.in/cookies): Details on essential cookies and local storage.
+- [Delete Account](https://pryvo.traincapetech.in/delete-account): Self-service 2-step email OTP account and data deletion (works for both Email and Google Sign-In accounts).
+
+## Machine-Readable Resources
+
+- [Robots & Content Signals](https://pryvo.traincapetech.in/robots.txt)
+- [XML Sitemap](https://pryvo.traincapetech.in/sitemap.xml)
+- [MCP Server Card (SEP-1649)](https://pryvo.traincapetech.in/.well-known/mcp/server-card.json)
